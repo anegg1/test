@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     Button button1;
-    EditText editText;
+    EditText editText_name;
+    EditText editText_age;
 
 
     @Override
@@ -22,10 +23,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        button1 = (Button) findViewById(R.id.button1);
-        editText = (EditText) findViewById(R.id.editTextTextPersonName);
+        button1 = findViewById(R.id.button1);
+        editText_name = findViewById(R.id.editText_Name);
+        editText_age = findViewById(R.id.editText_age);
 
         button1.setOnClickListener(this);
+
 
 
     }
@@ -33,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent intent = new Intent(this,MainActivity2.class);
-        intent.putExtra("name", editText.getText().toString());
+        intent.putExtra("name", editText_name.getText().toString());
+        intent.putExtra("name", editText_age.getText().toString());
         startActivity(intent);
     }
 }
